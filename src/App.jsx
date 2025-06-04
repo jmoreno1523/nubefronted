@@ -6,7 +6,7 @@ function App() {
 
   // Obtener historial al cargar la página
   useEffect(() => {
-    fetch('http://localhost:3000/api/registro')
+    fetch('https://nube-backend.vercel.app/api/registro')
       .then((res) => res.json())
       .then((data) => setRegistros(data))
       .catch((err) => console.error('Error al obtener registros:', err));
@@ -38,7 +38,7 @@ function App() {
       const nuevoRegistro = { direccion, hora: now };
 
       // Enviar al backend
-      fetch('http://localhost:3000/api/registro', {
+      fetch('https://nube-backend.vercel.app/api/registro', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(nuevoRegistro),
